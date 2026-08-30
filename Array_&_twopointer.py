@@ -144,3 +144,51 @@
 # nums = [4,-1,2,1]
 # print(maximumsubarray(nums))          # time = O(n)  & space = O(1)
 # --------------------------------------------------------------------------------------------------------------------------------
+""" 6). 152.. maximum product subarray"""
+# def maxProductSubarray(nums):
+#     if not nums:
+#         return 0
+
+#     max_ending_here = min_ending_here = result = nums[0]
+
+#     for i in nums[1:]:
+#         if i < 0:
+#             max_ending_here,min_ending_here = min_ending_here, max_ending_here
+
+#             max_ending_here = max(i , max_ending_here * i)
+#             min_ending_here= min(i , min_ending_here * i)
+#             result = max(result,max_ending_here)
+
+#     return result
+
+
+# nums = [2,3,-2,4]
+# print(maxProductSubarray(nums))   # output - 6   time = O(n)    and space - O(1)
+ # ----------------------------------------------------------------------------------------------
+'''7). 153. Find minimum in rotated sorted array'''
+## input = [3,4,5,1,2]   ,, output = 1
+# Explation = the original array was [1,2,3,4,5] rotated 3 time
+
+# def findMin(nums):
+
+#     res = nums[0]
+#     l, r = 0, len(nums) - 1
+
+
+#     while l <= r:
+#         if nums[l] < nums[r]:
+#             res = min(res,nums[l])
+#             break
+
+#         m = (l + r) // 2
+#         res = min(res,nums[m])
+#         if nums[m]  >= nums[l]:
+#             l = m + 1
+#         else:
+#             r = m + 1
+#     return res
+
+
+# nums = [3,4,5,1,2]
+# print(findMin(nums))
+# -------------------------------------------------------------------------------------------------------------
