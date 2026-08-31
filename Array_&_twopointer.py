@@ -192,3 +192,76 @@
 # nums = [3,4,5,1,2]
 # print(findMin(nums))
 # -------------------------------------------------------------------------------------------------------------
+'''8) 33.  The Search in rotated sorted array'''
+### Input =  [4,5,6,7,0,1,2]       # output = 0
+
+# def Search(nums,target):
+#     start = 0
+#     end = len(nums) - 1
+
+#     while (start <= end):
+#         mid = start + (end - start)// 2
+#         if (nums[mid == target]):
+#             return mid
+
+#         if (nums[start] <= nums[mid]):      ### Left Sorted
+#             if (nums[start] <= target <= nums[mid]):     ## Left
+#                 end = mid - 1
+#             else:
+#                 start = mid + 1
+
+#         else:           ## Right sorted
+#             if (nums[mid] <= nums[end]):  # Right
+#                 if (nums[mid] < target <= nums[end]):
+#                     start  = mid + 1
+#             else:
+#                 end = mid - 1
+
+#     return -1
+
+
+# nums = [4,5,6,7,0,1,2]
+# target = 0
+# print(Search(nums,target))     # output = 
+
+# ------------------------------------------------------------------------------------------------------------
+''' 9) 51. 3sum '''
+## Input: nums = [-1,0,1,2,-1,-4]
+# Output: [[-1,-1,2],[-1,0,1]]
+
+# def threeSum(nums):
+#         nums.sort()
+#         n = len(nums)
+#         result = []
+#         for i in range(n - 2):
+#             if (i > 0 and nums[i] == nums[i - 1]): ## To avoid duplication 
+#                 continue
+#             # early exit : smallest possible sum > 0
+#             if nums[i] > 0:
+#                 break
+
+#             j, k = i + 1 , n - 1
+#             while (j < k):
+#                 sum = nums[i] + nums[j] + nums[k]
+
+#                 if (sum <  0):
+#                     j += 1
+                    
+#                 elif (sum > 0):
+#                         k -= 1
+
+#                 else:
+#                     result.append([nums[i],nums[j], nums[k]])
+#                     j += 1
+#                     k -= 1
+#                 # skip duplicate
+#                 while j < k and nums[j] == nums[j-1]:
+#                     j += 1
+#                 while j < k and nums[k] == nums[k-1]:
+#                     k -= 1
+
+#         return result 
+        
+# nums = [-1,0,1,2,-1,-4]
+# print(threeSum(nums))
+# ---------------------------------------------------------------------------------------------------------------
