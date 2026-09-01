@@ -265,3 +265,36 @@
 # nums = [-1,0,1,2,-1,-4]
 # print(threeSum(nums))
 # ---------------------------------------------------------------------------------------------------------------
+''' 10) 16. 3 sum closest '''
+# Input: nums = [-1,2,1,-4], target = 1
+# Output: 2
+
+# def threeSumClosest(nums,target):
+#     nums.sort()
+#     n = len(nums)
+#     closest = nums[0] + nums[1] + nums[2]
+
+#     for i in range(n-2):
+#         j, k = i + 1, n-1
+
+#         while(j < k):
+#             curr = nums[i] + nums[j] + nums[k]
+#             if abs(curr - target) < abs(closest - target):
+#                 closest = curr
+#             if curr == target:
+#                 return curr # can't get closer than exact
+#             elif curr < target:
+#                 j += 1
+#             else:
+#                 k -= 1
+#     return closest
+
+
+# nums = [-1,2,1,-4]
+# target = 1
+
+# print(threeSumClosest(nums,target))
+
+# Time = O(n^2)
+# space = O(1)
+# -------------------------------------------------------------------------------------------------------------------------------
