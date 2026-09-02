@@ -298,3 +298,55 @@
 # Time = O(n^2)
 # space = O(1)
 # -------------------------------------------------------------------------------------------------------------------------------
+''' 10) 18. 4sum '''
+# Input: nums = [1,0,-1,0,-2,2], target = 0
+# Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+
+# def foursum(nums,target):
+#     nums.sort()
+#     n = len(nums)
+#     result = []
+
+#     for i in range(n-3):
+#         if i > 0 and nums[i] == nums[i-1]:
+#             continue
+#         if nums[i] + nums[i+1] + nums[i+2] + nums[i+3] > target:
+#             break
+#         if nums[i] + nums[n-1] + nums[n-2] + nums[n-3] < target:
+#             continue
+
+#         for j in range(i+1, n-2):
+#             if j > i + 1 and nums[j] == nums[j-1]:
+#                 continue
+#             if nums[i] + nums[j] + nums[j+1] + nums[j+2] > target:
+#                 break
+#             if nums[i] + nums[j] + nums[n-1] + nums[n-2] < target:
+#                 continue
+
+#             p,q = i + 1, n-1
+#             while(p < q):
+#                 sum = nums[i] + nums[j] + nums[p] + nums[q]
+
+#                 if sum == target:
+#                     result.append([nums[i],nums[j],nums[p],nums[q]])
+#                     p += 1
+#                     q -= 1
+#                     while p < q and nums[p] == nums[p-1]:
+#                         p += 1
+#                     while p < q and nums[q] == nums[q+1]:
+#                         q -= 1
+
+#                 elif sum < target:
+#                     p += 1
+
+#                 else:
+#                     q -= 1
+
+#     return result
+
+
+# nums = [1,0,-1,0,-2,2]
+# target = 0
+
+# print(foursum(nums,target))
+# -----------------------------------------------------------------------------------------------------------------
