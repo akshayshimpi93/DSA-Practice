@@ -350,3 +350,57 @@
 
 # print(foursum(nums,target))
 # -----------------------------------------------------------------------------------------------------------------
+'''11) 11. container with most water'''
+
+# def maxArea(height):
+#         """
+#         :type height: List[int]
+#         :rtype: int
+#         """
+#         left = 0
+#         right = len(height) - 1
+#         max_water = 0
+
+#         while left < right:
+#             width = right - left
+#             current_water = min(height[left], height[right]) * width
+
+#             max_water = max(max_water, current_water)
+
+#             if height[left] < height[right]:
+#                 left += 1
+#             else:
+#                 right -= 1
+
+#         return max_water
+# height = height = [1,8,6,2,5,4,8,3,7]
+
+# print(maxArea(height))   # output = 49
+# ---------------------------------------------------------------------------------------------------------------
+""" 12) 43. trapping rainwater"""
+# Input: height = [4,2,0,3,2,5]
+# Output: 9
+
+
+# def trap(height):
+#         n = len(height)
+#         ans = 0
+#         l, r = 0 , n-1
+#         lmax = rmax = 0
+
+#         while(l < r):
+#             lmax = max(lmax, height[l])
+#             rmax = max(rmax,height[r])
+
+#             if (lmax < rmax):
+#                 ans += lmax - height[l]
+#                 l += 1
+#             else:
+#                 ans += rmax - height[r]
+#                 r -= 1
+
+#         return ans
+
+# height = [4,2,0,3,2,5]
+# print(trap(height))
+# ---------------------------------------------------------------------------------------------------------------------------
