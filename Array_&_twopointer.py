@@ -404,3 +404,45 @@
 # height = [4,2,0,3,2,5]
 # print(trap(height))
 # ---------------------------------------------------------------------------------------------------------------------------
+#14. sort colors(Dutch National Flag)
+# Input nums = [2,0,2,1,1,0]
+# output = [0,0,1,1,2,2]
+
+# def Sort(nums):
+#     low ,mid,high = 0,0,len(nums) - 1
+#     while mid <= high:
+#         if nums[mid] == 0:
+#             nums[low],nums[mid] = nums[mid], nums[low]
+#             low += 1
+#             mid += 1
+#         elif nums[mid] == 1:
+#             mid += 1
+#         else:
+#             nums[mid], nums[high] = nums[high],nums[mid]
+#             high -= 1
+
+
+# nums = [2,0,2,1,1,0]
+# print(Sort(nums))     # Time = O(n) and space = O(1)
+# ------------------------------------------------------------------------------
+'''16).31 Next permutation'''
+# Input: nums = [1,2,3]
+# Output: [1,3,2]
+
+# def nextPermutation(nums):
+#     n = len(nums)
+#     i = n-2
+#     while i >= 0 and nums[i] >= nums[i+1]:
+#         i -= 1 
+#     if i >= 0:
+#         j = n - 1
+#         while nums[j] <= nums[i]:
+#             j -= 1
+#         nums[i],nums[j] = nums[j],nums[i]
+
+#         nums[i+1:] = reversed(nums[i+1:])
+
+
+# nums =  [1,2,3]
+# print(nextPermutation(nums))
+
