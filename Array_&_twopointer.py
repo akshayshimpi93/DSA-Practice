@@ -445,4 +445,29 @@
 
 # nums =  [1,2,3]
 # print(nextPermutation(nums))
+# --------------------------------------------------------------------------------------------------------------------------------
+''' 17) leetcode = 56  Merge interval '''
+# Input:
+# [[1,3],[2,6],[8,10],[15,18]]
 
+# Output:
+# [[1,6],[8,10],[15,18]]
+
+
+# def merge(intervals):
+#         intervals.sort()
+
+#         result = []
+
+#         for start, end in intervals:
+#             if not result or start > result[-1][1]:
+#                 result.append([start, end])
+#             else:
+#                 result[-1][1] = max(result[-1][1], end)
+
+#         return result
+
+
+# interval = [[1,3],[2,6],[8,10],[15,18]]
+# print(merge(interval))
+# ----------------------------------------------------------------------------------------------------------------------
