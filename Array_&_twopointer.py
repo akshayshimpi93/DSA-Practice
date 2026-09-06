@@ -404,7 +404,7 @@
 # height = [4,2,0,3,2,5]
 # print(trap(height))
 # ---------------------------------------------------------------------------------------------------------------------------
-#14. sort colors(Dutch National Flag)
+''' 14. sort colors(Dutch National Flag) '''
 # Input nums = [2,0,2,1,1,0]
 # output = [0,0,1,1,2,2]
 
@@ -444,7 +444,8 @@
 
 
 # nums =  [1,2,3]
-# print(nextPermutation(nums))
+# nextPermutation(nums)
+# print(nums)
 # --------------------------------------------------------------------------------------------------------------------------------
 ''' 17) leetcode = 56  Merge interval '''
 # Input:
@@ -471,3 +472,45 @@
 # interval = [[1,3],[2,6],[8,10],[15,18]]
 # print(merge(interval))
 # ----------------------------------------------------------------------------------------------------------------------
+''' 16).Rotate Array '''
+#input = [1,2,3,4,5,6]
+#ouput = [5,6,1,2,3,4]
+
+# def RotateArray(arr,k):
+#     n = len(arr)
+#     k %= n
+
+#     arr[:] = arr[::-1]
+#     arr[k:] = arr[k:][::-1]
+#     arr[:k] = arr[:k][::-1]
+
+# arr = [1,2,3,4,5,6]
+# RotateArray(arr,2)
+# print(arr)
+# -------------------------------------------------------------------------------------------------------
+'''17.Non - overlapping interval'''
+#INPUT = interval = [[1,2],[2,3],
+            #       [3,4],[1,3]]
+
+#output = 1
+
+# def EraseoVerappingInterval(interval):
+#     if not interval:
+#         return 0
+
+#     interval.sort(key = lambda x: x[1]) # sort by end time
+#     count = 0
+#     prev_end = interval[0][1]
+
+#     for start,end in interval[1:]:
+#         if start < prev_end:
+#             count += 1
+
+#         else:
+#             prev_end = end
+#     return count
+
+# interval = [[1,2],[2,3],
+#             [3,4],[1,3]]
+# print(EraseoVerappingInterval(interval))
+# ---------------------------------------------------------------------------------------------------------------------------
