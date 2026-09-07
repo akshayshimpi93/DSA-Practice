@@ -514,3 +514,37 @@
 #             [3,4],[1,3]]
 # print(EraseoVerappingInterval(interval))
 # ---------------------------------------------------------------------------------------------------------------------------
+'''20)leetcode = 977 square of the sorted Array '''
+#Input= nums = [-4,-1,0,3,10]
+#output = [0,1,9,16,100]
+
+# def squareSorArry(nums):
+#     result = []
+
+#     for i in nums:
+#         square = i * i
+#         result.append(square)
+#         result.sort(reverse = False)
+#     return result
+
+# nums = [-4,-1,0,3,10]
+# print(squareSorArry(nums))
+# time = O(n^2)  and space = O(n)
+#-------------------------------------------------------------------------------------------------------
+'''21) 283. Move zeros'''
+# input = nums = [0,1,0,3,12]
+#         output = [1,3,12,0,0]
+
+# def movezeros(nums):
+#     i = 0
+#     for j in range(len(nums)):
+#         if nums[j] != 0:
+#             nums[i],nums[j] = nums[j],nums[i]
+#             i += 1
+#     return nums
+
+# nums = [0,1,0,3,12]
+# print(movezeros(nums))  # Time = O(n) and Space = O(1)
+#--------------------------------------------------------------------------
+
+
