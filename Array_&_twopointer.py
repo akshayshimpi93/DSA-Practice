@@ -546,5 +546,23 @@
 # nums = [0,1,0,3,12]
 # print(movezeros(nums))  # Time = O(n) and Space = O(1)
 #--------------------------------------------------------------------------
+'''22)26.Remove Duplicate from sorted Array'''
+#input = Nums = [1,1,2]
+# output = [1,2,]
 
+# def removeduplicate(nums):
+#     if not nums:
+#         return 0
+#     i = 0
 
+#     for j in range(1, len(nums)):
+#         if nums[j] != nums[i]:
+#             i += 1
+#             nums[i] = nums[j]
+#     return i + 1
+
+# nums= [1,1,2]
+# k = removeduplicate(nums)
+# # print(k)
+# print(nums[:k])
+# # --------------------------------------------------------------------------------------------
