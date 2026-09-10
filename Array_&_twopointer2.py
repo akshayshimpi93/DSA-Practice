@@ -52,7 +52,7 @@
 # def maxvalidsum(nums,k):
 #     n = len(nums)
 #     best = float('-inf')
-#     max_left = float('-inf')
+#     max_left = float('-inf')   # -inf ==== -♾️
 #     i = 0
 
 #     for j in range(k,n):
@@ -78,12 +78,67 @@
 #     for i in range(n):
 #         if(freq == 0):
 #             ans = nums[i]
-#             if(ans == nums[i]):
-#                 freq += 1
-#             else:
-#                 freq -= 1
+#         if(ans == nums[i]):
+#             freq += 1
+#         else:
+#             freq -= 1
 #     return ans
 
 # nums = [3,2,3]
 # print(majorityElem(nums))
-# -------------------------------------------------------
+# --------------------------------------------------------------------------------
+''' 26. GAS STATION '''
+# gas = [1,2,4,5,9]    cost = [3,4,1,10,1]     Ouptu = 4
+
+# def canCompleteCircle(gas,cost):
+
+#     start = 0
+#     tank = 0
+#     total = 0
+
+#     for i in range(len(gas)):
+#         diff = gas[i] - cost[i]
+#         total += diff
+#         tank += diff
+
+#         if tank < 0:
+#             start = i+ 1
+#             tank = 0
+
+#     return start if total >= 0 else -1
+
+
+# gas = [1,2,4,5,9] 
+# cost = [3,4,1,10,1]
+# print(canCompleteCircle(gas,cost))
+# ------------------------------------------------------------------------------------------------------------------
+''' 27 . SET MATRIX ZEROES'''
+
+# def setZeros(matrix):
+#     rows = len(matrix)
+#     cols = len(matrix[0])
+
+#     zero_rows = set()
+#     zero_cols = set()
+
+#     for i in range(rows):
+#         for j in range(cols):
+#             if matrix[i][j] == 0:
+#                 zero_rows.add(i)
+#                 zero_cols.add(j)        # find row and column containing 0
+
+#         #set row to 0
+#         for i in zero_rows:
+#             for j in range(cols):
+#                 matrix[i][j] = 0
+
+
+#         #set cols to 0
+#         for j in zero_cols:
+#             for i in range(rows):
+#                 matrix[i][j] = 0
+
+#     return matrix
+
+# matrix = [[1,1,1],[1,0,1],[1,1,1]]
+# print(setZeros(matrix))
