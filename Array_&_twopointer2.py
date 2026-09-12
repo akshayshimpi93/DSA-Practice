@@ -240,3 +240,136 @@
 # rotateimage(matrix)
 # print(matrix)             #time = O(n^2)   and space = O(1)
 # ---------------------------------------------------------------------------------------------------------
+''' Pascal's triangle '''
+# input = pascals_triangle(5)
+# output = triangle shape
+
+# def pascals_triangle(n):
+#     triangle = []
+#     row = [1]
+
+#     for i in range(n):
+#         triangle.append(row)
+#         row = [1] + [row[j] + row[j+1] for j in range(len(row) - 1)] + [1]
+#     return triangle
+
+# for row in pascals_triangle(6):
+#     print(row)
+# -------------------------------------------------------------------------------------------------------------------------
+''' Find  all duplicated in an array '''
+# Input: nums = [4,3,2,7,8,2,3,1]
+# Output: [2,3]
+
+# def duplicate(nums):
+#     seen = set()
+#     duplicates = set()
+
+#     for i in nums:
+#         if i in seen:
+#             duplicates.add(i)
+#         else:
+#            seen.add(i)
+
+#     return list(duplicates)
+
+
+# nums = [4,3,2,7,8,2,3,1]
+# print(duplicate(nums))
+# ---------------------------------------------------------------------------------
+''' find mmissing positive '''
+# input = nums = [-2,3,-1,0,1,9]
+# output = 2
+
+# def missingPostive(nums):
+#     missingNum = 1
+#     nums.sort()
+
+#     for num in nums:
+#         if num > 0:
+#             if num == missingNum:
+#                 missingNum += 1
+#             elif(num > missingNum):
+#                 break
+#     return missingNum
+
+# nums= [-2,3,-1,0,1,9]
+# print(missingPostive(nums))
+# ----------------------------------------------------------------------------------------------------------
+''' Merge sorted array '''
+# input = nums1 = [1,2,3,0,0,0], m = 3
+# nums2 = [2,5,6] , n = 3
+#output = [1, 2, 2, 3, 5, 6]
+
+# def merge(A, m, B, n):
+
+#     idx = m + n-1
+#     i = m - 1
+#     j = n - 1
+
+#     while(i >= 0 and j >= 0):
+#         if(A[i] >= B[j]):
+#             A[idx] = A[i]
+#             i -= 1
+#         else:
+#             A[idx] = B[j]
+#             j -= 1
+#         idx -= 1
+
+#         while(j >= 0):
+#             A[idx] = B[j]
+#             j -= 1
+#             idx -= 1
+#         return A
+
+# A = [1,2,3,0,0,0]
+# m = 3
+# B = [2,5,6]
+# n = 3
+# print(merge(A,m,B,n))
+# -----------------------------------------------------------------------------
+''' H-Index'''
+# Input: citations = [3,0,6,1,5]
+# Output: 3
+
+# def hIndex(citations):
+    
+#         n = len(citations)
+#         buckets = [0] * (n + 1)
+
+#         for c in citations:
+#             buckets[min(c,n)] += 1
+#         total = 0
+
+#         for h in range(n,-1,-1):
+#             total += buckets[h]
+#             if total >= h:
+#                 return h
+#         return 0
+
+# citations = [3,0,6,1,5]
+# print(hIndex(citations))
+# ------------------------------------------------------------------------------------------------
+'''summary range'''
+# Input: nums = [0,1,2,4,5,7]
+# Output: ["0->2","4->5","7"]
+# def summaryRange(nums):
+#     result = []
+#     start = 0
+
+#     for i in range(len(nums)):
+#             # Check if the current range ends
+#         if i == len(nums) - 1 or nums[i + 1] != nums[i] + 1:
+
+#             if start == i:
+#                 result.append(str(nums[i]))
+#             else:
+#                 result.append(
+#                     str(nums[start]) + "->" + str(nums[i]))
+
+#                 # Start a new range
+#             start = i + 1
+
+#     return result
+
+# nums = [0,1,2,4,5,7]
+# print(summaryRange(nums))
