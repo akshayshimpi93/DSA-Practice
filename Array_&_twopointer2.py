@@ -373,3 +373,30 @@
 
 # nums = [0,1,2,4,5,7]
 # print(summaryRange(nums))
+# ----------------------------------------------------------------------------.
+'''LeetCode Hard: First Missing Positive'''
+# Input:  [3, 4, -1, 1]
+#output = 2
+
+# def firstMissingPositive(nums):
+#     n = len(nums)
+
+#     i = 0
+
+#     while i < n:
+#         correct = nums[i] - 1
+
+#         if 1 <= nums[i] <= n and nums[i] != nums[correct]:
+#             nums[i], nums[correct] = nums[correct], nums[i]
+#         else:
+#             i += 1
+
+#     for i in range(n):
+#         if nums[i] != i + 1:
+#             return i + 1
+
+#     return n + 1
+    
+# nums =  [3, 4, -1, 1]
+# print(firstMissingPositive(nums))
+# ---------------------------------------------------------------------------
