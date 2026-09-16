@@ -33,3 +33,19 @@
 # k = 3
 
 # print(max_sliding_window(nums, k))
+# -------------------------------------------------------------------------------------------
+''' 122.Best time to buy and sell the stock'''
+# input = [7,1,5,3,6,4]
+# output = 7
+
+# def buy_sell_stock(price):
+#     max_profit = 0
+#     for i in range(len(price)-1):
+#         if price[i] < price[i+1]:
+#             max_profit += price[i+1] - price[i]
+
+#     return max_profit
+
+# price = [7,1,5,3,6,4]
+# print(buy_sell_stock(price))
+# -------------------------------------------------------------------------
