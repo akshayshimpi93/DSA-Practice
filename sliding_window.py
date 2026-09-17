@@ -49,3 +49,49 @@
 # price = [7,1,5,3,6,4]
 # print(buy_sell_stock(price))
 # -------------------------------------------------------------------------
+''' Longest substring without repeting character '''
+# Input: s = "abcabcbb"
+# Output: 3
+
+# def longest_substring(s):
+#     seen = {}   #char = last index seen
+#     left = 0
+#     longest = 0
+
+#     for right,char in enumerate(s):
+#         if char in seen and seen[char] >= left:
+#             left = seen[char] + 1   # move left past the duplicate
+#         seen[char] = right
+#         longest = max(longest , right - left + 1)
+#     return longest
+
+# s = "abcabcbb"
+# print(longest_substring(s))
+# -------------------------------------------------------------------------------------------------------
+''''37) Longest repeating character replacement '''
+#input = s = "ABAB" , k = 2
+#output = 4
+
+def characterReplacement(s,k):
+    count = {}
+    max_count = 0 #count of the most frequent char in current window
+    left = 0
+    result = 0
+
+    for right in range(len(s)):
+        count[s[right]] = count.get(s[right],0) + 1
+        max_count = max(max_count,count[s[right]])
+
+        # window size - max_count = char needing replacement
+
+        if (right - left + 1) - max_count > k:
+            count[s[left]] -= 1
+            left += 1
+
+        result = max(result,right - left + 1)
+
+    return result 
+
+s =  "ABAB"
+k = 2
+print(characterReplacement(s,k))
