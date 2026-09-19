@@ -72,26 +72,172 @@
 #input = s = "ABAB" , k = 2
 #output = 4
 
-def characterReplacement(s,k):
-    count = {}
-    max_count = 0 #count of the most frequent char in current window
-    left = 0
-    result = 0
+# def characterReplacement(s,k):
+#     count = {}
+#     max_count = 0 #count of the most frequent char in current window
+#     left = 0
+#     result = 0
 
-    for right in range(len(s)):
-        count[s[right]] = count.get(s[right],0) + 1
-        max_count = max(max_count,count[s[right]])
+#     for right in range(len(s)):
+#         count[s[right]] = count.get(s[right],0) + 1
+#         max_count = max(max_count,count[s[right]])
 
-        # window size - max_count = char needing replacement
+#         # window size - max_count = char needing replacement
 
-        if (right - left + 1) - max_count > k:
-            count[s[left]] -= 1
-            left += 1
+#         if (right - left + 1) - max_count > k:
+#             count[s[left]] -= 1
+#             left += 1
 
-        result = max(result,right - left + 1)
+#         result = max(result,right - left + 1)
 
-    return result 
+#     return result 
 
-s =  "ABAB"
-k = 2
-print(characterReplacement(s,k))
+# s =  "ABAB"
+# k = 2
+# print(characterReplacement(s,k))
+# -------------------------------------------------------------------------------------------------------------------------------
+''' permutation of string '''
+# Input: s1 = "ab", s2 = "eidbaooo"
+# Output: true
+# Explanation: s2 contains one permutation of s1 ("ba").
+
+# def permutation_of_str(s1,s2):
+#     n , m = len(s1),len(s2)
+#     if n > m:
+#         return False
+
+#     need = [0] * 26
+#     window = [0] * 26
+
+#     for ch in s1:
+#         need[ord(ch) - ord('a')] += 1
+
+#         for i in range(m):
+#             window[ord(s2[i]) - ord('a')] += 1
+
+#             if i >= n:
+#                 window[ord(s2[i - n]) - ord('a')] -= 1
+
+#             if i >= n - 1 and window == need:
+#                 return False
+#         return True
+
+# s1 = "ab"
+# s2 = "eidbaooo"
+# print(permutation_of_str(s1,s2))
+# -------------------------------------------------------------------------------------------------------------------
+''' 40.minimum window substring'''
+# Input: s = "ADOBECODEBANC", t = "ABC"
+# Output: "BANC"
+# Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+
+# from collections import Counter
+
+# def min_window(s,t):
+#     if not s or not t:
+#         return " "
+
+#     need = Counter(t)
+#     missing = len(t)        # total chars still needed (with multiplication)
+#     left = 0
+#     best_len = float('inf')
+#     best_left,best_right = 0,0
+
+#     for right,char in enumerate(s):
+#         if need[char] > 0:
+#             missing -= 1
+#         need[char] -= 1
+
+#         while missing == 0:
+#             if right - left + 1 < best_len:
+#                 best_len = right - left + 1
+#                 best_left, best_right = left,right
+
+#             need[s[left]] += 1
+#             if need[s[left]] > 0:
+#                 missing += 1
+#             left += 1
+
+
+#     return "" if best_len == float('inf') else s[best_left:best_right + 1]
+
+
+# s = "ADOBECODEBANC"
+# t = "ABC"
+# print(min_window(s,t))
+# -------------------------------------------------------------------------------------------------------------------------
+''' 41.sliding window maximum '''
+# Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
+# Output: [3,3,5,5,6,7]
+
+# from collections import deque
+
+# def max_sliding_window(nums,k):
+#     dq = deque()
+#     result = []
+
+#     for i in range(len(nums)):
+
+#         while dq and dq[0] <= i - k:
+#             dq.popleft()
+
+#         # remove smaller element from the back
+#         while dq and nums[dq[-1]] <= nums[i]:
+#             dq.pop()
+
+#         # add current index
+#         dq.append(i)
+
+#         #window is ready
+#         if i >= k - 1:
+#             result.append(nums[dq[0]])
+
+#     return result
+
+# nums = [1,3,-1,-3,5,3,6,7]
+# k = 3
+# print(max_sliding_window(nums,k))
+
+# ------------------------------------------------------------------------------------------------------------------
+''' find all anagram in a strings'''
+# s = "cbaebabacd"
+# p = "abc"
+
+# Output = [0, 6]
+
+# def findAnagram(s,p):
+#     if len(p) > len(s):
+#         return []
+
+#     result = []
+
+#     p_count = [0] * 26
+#     window = [0] * 26
+
+#     for ch in p:
+#         p_count[ord(ch) - ord('a')] += 1
+
+#     k = len(p)
+
+#     for i in range(len(s)):
+#         # Add the current character
+#         window[ord(s[i]) - ord('a')] += 1
+
+#         # Remove character outside window
+#         if i >= k:
+#             window[ord(s[i-k]) - ord('a')] -= 1
+
+#         # compare frequent array
+#         if window == p_count:
+#             result.append(i - k + 1)
+
+#     return result 
+
+# s = "cbaebabacd"
+# p = "abc"
+
+# print(findAnagram(s,p))
+        
+# --------------------------------------------------------------------------------------------
+
+
